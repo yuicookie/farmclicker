@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ファームクリッカー</title>
+  <link rel="stylesheet" href="code/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- 画像ドラッグ禁止 -->
+<body onMouseDown="return false;" onSelectStart="return false">
+<!-- ウィンドウ -->
+  <div id="window">
+  <img class="window" src="img/window.jpg">
+  <img class="ryoukai" src="img/ryoukai.png" onclick="ryoukai()">
+</div>
+<!-- タイトル画面 -->
+<div id="title">
+  <div class="title_container"></div>
+  <img class="game_title" src="img/game_title.png">
+  <img class="start_btn" src="img/start_btn.png" onclick="start_btn()">
+  <img class="help_btn" src="img/help_btn.png" onclick="help_btn()">
+  <img id="help_1" class="help_1" src="img/help_1.jpg">
+  <img id="help_2" class="help_2" src="img/help_2.jpg">
+  <img id="next" class="next" src="img/next.png" onclick="next()">
+  <img id="back" class="back" src="img/back.png" onclick="back()">
+  <img id="batu" class="batu" src="img/batu.png" onclick="batu()">
+</div>
+<!-- ゲーム画面 -->
+  <div id="game">
+  <img id="clear_ryoukai" class="clear_ryoukai" src="img/ryoukai.png" onclick="clear_ryoukai()">
+  <img id="game_clear" class="game_clear" src="img/game_clear.png">
+  <div class="container"></div>
+  <img id="komugi100" class="komugi100" src="img/komugi100.png" onclick="komugi_click()">
+  <img id="komugi" class="komugi" src="img/komugi.png">
+  <h1><span id="komugi_cnt" class="komugi_cnt">0</span></h1>
+  <h1><span id="egg_cnt" class="egg_cnt">0</span></h1>
+  <h1><span id="yen" class="yen">￥</span></h1>
+  <h1><span id="money" class="money">0</span></h1>
+  <img id="niwatori" class="niwatori" src="img/niwatori.png" onclick="eat_click()">
+  <img src="img/egg.png" id="egg">
+  <img id="kakeru10" class="kakeru10" src="img/kakeru10.png" onclick="kakeru10_click()">
+  <img id="kakeru100" class="kakeru100" src="img/kakeru100.png" onclick="kakeru100_click()">
+  <img id="kakeru1000" class="kakeru1000" src="img/kakeru1000.png" onclick="kakeru1000_click()">
+
+<a href="#" class="js-modal-open01" data-target="modal01"><img src="img/buy_button.png"></a>
+<a href="#" class="js-modal-open02" data-target="modal02"><img src="img/sell_button.png"></a>
+<a href="#" class="js-modal-open03" data-target="modal03"><img src="img/cooking.png"></a>
+
+<div id="modal01" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <!-- <h1 style="text-align:center">購入</h1> -->
+      <h1><div id="yen_copy" class="yen_copy">所持金￥</div></h1>
+      <h1><div id="money_copy" class="money_copy">0</div></h1>
+      <!-- ボタン1 -->
+      <img id="click_buy_btn1" class="click_buy_btn1" src="img/click_buy_btn1.png" onclick="click_buy_btn1_click()">
+      <h1><span id="yen1" class="yen1">￥</span></h1>
+      <h1><span id="click_btn1_yen" class="click_btn1_yen">100</span></h1>
+      <h1><span id="buy1_cnt" class="buy1_cnt">0</span></h1>
+
+      <!-- ボタン2 -->
+      <img id="click_buy_btn2" class="click_buy_btn2" src="img/click_buy_btn2.png" onclick="click_buy_btn2_click()">
+      <h1><span id="yen2" class="yen2">￥</span></h1>
+      <h1><span id="click_btn2_yen" class="click_btn2_yen">300</span></h1>
+      <h1><span id="buy2_cnt" class="buy2_cnt">0</span></h1>
+
+      <!-- ボタン3 -->
+      <img id="click_buy_btn3" class="click_buy_btn3" src="img/click_buy_btn3.png" onclick="click_buy_btn3_click()">
+      <h1><span id="yen3" class="yen3">￥</span></h1>
+      <h1><span id="click_btn3_yen" class="click_btn3_yen">1000</span></h1>
+      <h1><span id="buy3_cnt" class="buy3_cnt">0</span></h1>
+
+      <!-- ボタン4 -->
+      <img id="click_buy_btn4" class="click_buy_btn4" src="img/click_buy_btn4.png" onclick="click_buy_btn4_click()">
+      <h1><span id="yen4" class="yen4">￥</span></h1>
+      <h1><span id="click_btn4_yen" class="click_btn4_yen">3000</span></h1>
+      <h1><span id="buy4_cnt" class="buy4_cnt">0</span></h1>
+
+      <a href="#" class="js-modal-close"></a>
+    </div>
+</div>
+
+<div id="modal02" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <!-- <h1 style="text-align:center">売却</h1> -->
+      <h1><div id="yen_copy2" class="yen_copy2">所持金￥</div></h1>
+      <h1><div id="money_copy2" class="money_copy2">0</div></h1>
+      <h1><div id="goukei" class="goukei">合計￥</div></h1>
+      <h1><div id="goukei_money" class="goukei_money">0</div></h1>
+      <!-- 卵焼き -->
+      <div class="sen1" style="padding: 10px; margin-bottom: 10px; border: 5px double #333333;">
+        <img class="tamagoyaki_sell" src="img/tamagoyaki.png">
+        <h1><span id="tamagoyaki_yen" class="tamagoyaki_yen">￥20</span></h1>
+        <h1><span id="tamagoyaki_sell_cnt" class="tamagoyaki_sell_cnt">0</span></h1>
+        <input type="button" value="+" onclick="tamagoyaki_up_button_click();" class="tamagoyaki_up">
+        <input type="button" value="-" onclick="tamagoyaki_down_button_click();" class="tamagoyaki_down">
+      </div>
+      <!-- カステラ -->
+      <div class="sen2" style="padding: 10px; margin-bottom: 10px; border: 5px double #333333;">
+        <img class="kasutera_sell" src="img/kasutera.png">
+        <h1><span id="kasutera_yen" class="kasutera_yen">￥250</span></h1>
+        <h1><span id="kasutera_sell_cnt" class="kasutera_sell_cnt">0</span></h1>
+        <input type="button" value="+" onclick="kasutera_up_button_click();" class="kasutera_up">
+        <input type="button" value="-" onclick="kasutera_down_button_click();" class="kasutera_down">
+      </div>
+      <!-- プリン -->
+      <div class="sen3" style="padding: 10px; margin-bottom: 10px; border: 5px double #333333;">
+        <img class="purin_sell" src="img/purin.png">
+        <h1><span id="purin_yen" class="purin_yen">￥3000</span></h1>
+        <h1><span id="purin_sell_cnt" class="purin_sell_cnt">0</span></h1>
+        <input type="button" value="+" onclick="purin_up_button_click();" class="purin_up">
+        <input type="button" value="-" onclick="purin_down_button_click();" class="purin_down">
+      </div>  
+      <img id="reset" class="reset" src="img/reset.png" onclick="reset_click()">
+      <img id="kakutei" class="kakutei" src="img/kakutei.png" onclick="kakutei_click()">
+      <a href="#" class="js-modal-close"></a>
+    </div>
+</div>
+
+<div id="modal03" class="modal js-modal">
+  <div class="modal-bg js-modal-close">
+  </div>
+    <div class="modal-content">
+      <img class="egg_copy" src="img/egg.png">
+      <h1><div id="egg_cnt_copy" class="egg_cnt_copy">0</div></h1>
+      <img id="tamagoyaki_btn" class="tamagoyaki_btn" src="img/tamagoyaki_btn.png" onclick="tamagoyaki_click()">
+      <h1><span id="tamagoyaki_cnt" class="tamagoyaki_cnt">0</span></h1>
+      <img id="kasutera_btn" class="kasutera_btn" src="img/kasutera_btn.png" onclick="kasutera_click()">
+      <h1><span id="kasutera_cnt" class="kasutera_cnt">0</span></h1>
+      <img id="purin_btn" class="purin_btn" src="img/purin_btn.png" onclick="purin_click()">
+      <h1><span id="purin_cnt" class="purin_cnt">0</span></h1>
+      <a href="#" class="js-modal-close"></a>
+    </div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="code/script.js"></script>
+
+</html>

@@ -1,0 +1,717 @@
+/* 文字選択禁止 */
+body{
+  user-select:none;
+  -webkit-user-select:none;
+  -ms-user-select: none;
+  -moz-user-select:none;
+  -khtml-user-select:none;
+  -webkit-user-drag:none;
+  -khtml-user-drag:none;
+  }
+
+/* ウィンドウ */
+.window {
+  position: absolute;
+  margin: 0px 0px 0px 250px;
+  z-index: 102;
+}
+.ryoukai {
+  position: absolute;
+  width: 250px;
+  top: 290px;
+  left: 520px;
+  z-index: 103;
+}
+/* タイトル画像 */
+.title_container {
+  position: absolute;
+  margin: 0px 0px 0px 250px;
+  width: 777px;
+  height: 549px;
+  background-image: url(../img/title.jpg);
+  z-index: 100;
+}
+.game_title {
+  position: absolute;
+  top: 100px;
+  left: 310px;
+  z-index: 101;
+}
+.start_btn {
+  position: absolute;
+  width:420px;
+  top: 240px;
+  left: 420px;
+  z-index: 101;
+}
+.help_btn {
+  position: absolute;
+  width:300px;
+  top: 390px;
+  left: 480px;
+  z-index: 101;
+}
+.help_1 {
+  position: absolute;
+  margin: 0px 0px 0px 250px;
+  z-index: 102;
+  display: none;
+}
+.help_2 {
+  position: absolute;
+  margin: 0px 0px 0px 250px;
+  z-index: 102;
+  display: none;
+}
+.next {
+  position: absolute;
+  width: 200px;
+  top: 15px;
+  left: 820px;
+  z-index: 103;
+  display: none;
+}
+.back {
+  position: absolute;
+  width: 200px;
+  top: 15px;
+  left: 260px;
+  z-index: 103;
+  display: none;
+}
+.batu {
+  position: absolute;
+  width:80px;
+  top: 15px;
+  left: 920px;
+  z-index: 103;
+  display: none;
+}
+
+/* ゲーム画面 */
+#game {
+  opacity: 0;
+}
+
+/* 背景画像 */
+.container {
+  position: relative;
+  /* margin: auto; */
+  margin: 10px 0px 0px 250px;
+  width: 777px;
+  height: 549px;
+  background-image: url(../img/shibahu.jpg);
+  z-index: 0;
+}
+
+/* クリック小麦 */
+.komugi100 {
+  position: absolute;
+  top: 270px;
+  left: 520px;
+  z-index: 2;
+}
+
+/* 小麦 */
+.komugi {
+  position: absolute;
+  top: 350px;
+  left: 800px;
+  z-index: 2;
+}
+
+/* 小麦カウント */
+.komugi_cnt {
+  position: absolute;
+  top: 310px;
+  left: 860px;
+  z-index: 2;
+}
+
+/* たまごカウント */
+.egg_cnt {
+  position: absolute;
+  top: 50px;
+  left: 500px;
+  z-index: 2;
+}
+
+.yen {
+  position: absolute;
+  top: 20px;
+  left: 770px;
+  z-index: 2;
+}
+
+/* お金 */
+.money {
+  position: absolute;
+  top: 20px;
+  left: 800px;
+  z-index: 2;
+}
+
+/* にわとり */
+.niwatori {
+  position: absolute;
+  top: 30px;
+  left: 315px;
+  z-index: 2;
+}
+
+/* にわとりの範囲 */
+/* .niwatori_area {
+  position: absolute;
+	border: 1px solid #000000;
+  top: 60px;
+  left: 350px;
+  width: 150px;
+	height: 130px;
+  z-index: 2;
+} */
+
+/* エサボタン */
+.kakeru10 {
+  position: absolute;
+  top: 50px;
+  left: 245px;
+  z-index: 2;
+}
+.kakeru100 {
+  position: absolute;
+  top: 110px;
+  left: 245px;
+  z-index: 2;
+}
+.kakeru1000 {
+  position: absolute;
+  top: 170px;
+  left: 245px;
+  z-index: 2;
+}
+
+/* 購入 */
+.yen_copy {
+  position: absolute;
+  font-size:35px;
+  top: 10px;  
+}
+.money_copy {
+  position: absolute;
+  font-size:35px;
+  top: 10px;
+  left:175px;  
+}
+/* ボタン1 */
+.click_buy_btn1 {
+  position: absolute;
+  top: 60px;
+}
+.yen1 {
+  position: absolute;
+  font-size:35px;
+  top: 110px;
+  left: 150px;  
+}
+.click_btn1_yen {
+  position: absolute;
+  font-size:35px;
+  top: 110px;
+  left: 180px;  
+}
+.buy1_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 110px;
+  left: 340px;  
+}
+
+/* ボタン2 */
+.click_buy_btn2 {
+  position: absolute;
+  top: 190px;
+}
+.yen2 {
+  position: absolute;
+  font-size:35px;
+  top: 240px;
+  left: 150px;  
+}
+.click_btn2_yen {
+  position: absolute;
+  font-size:35px;
+  top: 240px;
+  left: 180px;  
+}
+.buy2_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 240px;
+  left: 340px;  
+}
+
+/* ボタン3 */
+.click_buy_btn3 {
+  position: absolute;
+  top: 320px;
+}
+.yen3 {
+  position: absolute;
+  font-size:35px;
+  top: 370px;
+  left: 150px;  
+}
+.click_btn3_yen {
+  position: absolute;
+  font-size:35px;
+  top: 370px;
+  left: 180px;  
+}
+.buy3_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 370px;
+  left: 340px;  
+}
+
+/* ボタン4 */
+.click_buy_btn4 {
+  position: absolute;
+  top: 450px;
+}
+.yen4 {
+  position: absolute;
+  font-size:35px;
+  top: 500px;
+  left: 150px;  
+}
+.click_btn4_yen {
+  position: absolute;
+  font-size:35px;
+  top: 500px;
+  left: 180px;  
+}
+.buy4_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 500px;
+  left: 340px;  
+}
+
+/* 料理 */
+.egg_copy {
+  position: absolute;
+  width: 60px;
+  top: 40px;
+}
+.egg_cnt_copy {
+  position: absolute;
+  font-size:40px;
+  top: 45px;
+  left: 90px;
+  z-index: 2;
+}
+.tamagoyaki_btn {
+  position: absolute;
+  top: 100px;
+}
+.kasutera_btn {
+  position: absolute;
+  top: 230px;
+}
+.purin_btn {
+  position: absolute;
+  top: 360px;
+}
+/* 卵焼きカウント */
+.tamagoyaki_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 145px;
+  left: 340px;
+  z-index: 2;
+}
+/* カステラカウント */
+.kasutera_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 270px;
+  left: 340px;
+  z-index: 2;
+}
+/* プリンカウント */
+.purin_cnt {
+  position: absolute;
+  font-size:45px;
+  top: 395px;
+  left: 340px;
+  z-index: 2;
+}
+
+/* 売る */
+.yen_copy2 {
+  position: absolute;
+  font-size:35px;
+  top: 25px;  
+}
+.money_copy2 {
+  position: absolute;
+  font-size:35px;
+  top: 25px;
+  left:175px;  
+}
+.goukei {
+  position: absolute;
+  font-size:35px;
+  top: 440px;  
+}
+.goukei_money {
+  position: absolute;
+  font-size:35px;
+  top: 440px;
+  left:145px;  
+}
+/* 卵焼き売る */
+.sen1 {
+  position: absolute;
+  width: 350px;
+  top: 80px;
+}
+.tamagoyaki_sell {
+  position: relative;
+  width: 100px;
+}
+.tamagoyaki_yen {
+  position: absolute;
+  font-size:35px;
+  top: 35px;
+  left: 115px;  
+}
+.tamagoyaki_sell_cnt {
+  position: absolute;
+  font-size:40px;
+  top: 30px;
+  left: 260px;
+}
+.tamagoyaki_up {
+  position: absolute;
+  top: 30px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+.tamagoyaki_down {
+  position: absolute;
+  top: 60px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+/* カステラ売る */
+.sen2 {
+  position: absolute;
+  width: 350px;
+  top: 210px;
+}
+
+.kasutera_sell {
+  position: relative;
+  width: 90px;
+}
+.kasutera_yen {
+  position: absolute;
+  font-size:35px;
+  top: 25px;
+  left: 115px; 
+}
+.kasutera_sell_cnt {
+  position: absolute;
+  font-size:40px;
+  top: 20px;
+  left: 260px;
+}
+.kasutera_up {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+.kasutera_down {
+  position: absolute;
+  top: 50px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+/* プリン売る */
+.sen3 {
+  position: absolute;
+  width: 350px;
+  top: 330px;
+}
+.purin_sell {
+  position: relative;
+  width: 110px;
+}
+.purin_yen {
+  position: absolute;
+  font-size:35px;
+  top: 25px;
+  left: 115px; 
+}
+.purin_sell_cnt {
+  position: absolute;
+  font-size:40px;
+  top: 20px;
+  left: 260px;
+}
+.purin_up {
+  position: absolute;
+  top: 20px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+.purin_down {
+  position: absolute;
+  top: 50px;
+  width: 40px;
+  height: 25px;
+  left: 320px;
+}
+/* リセットボタン */
+.reset {
+  position: absolute;
+  width: 130px;
+  top: 490px;
+  left: 170px;
+}
+/* 確定ボタン */
+.kakutei {
+  position: absolute;
+  width: 130px;
+  top: 490px;
+  left: 295px;
+}
+
+
+/* 小麦クリックエフェクト */
+.komugi100 {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 3em;
+  padding: 0.5em 0.5em;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #ff0081;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+}
+.komugi100 > i {
+  position: relative;
+  z-index: -1;
+}
+.komugi100:focus {
+  outline: 0;
+}
+.komugi100:before, .komugi100:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 150%;
+  height: 70%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.komugi100:before {
+  display: none;
+  top: -35%;
+  background-image: radial-gradient(circle, #d53fff 10%, transparent 20%), radial-gradient(circle, transparent 10%, #d53fff 20%, transparent 30%), radial-gradient(circle, #d53fff 10%, transparent 20%), radial-gradient(circle, #d53fff 10%, transparent 20%), radial-gradient(circle, transparent 5%, #d53fff 15%, transparent 20%), radial-gradient(circle, #ffd635 10%, transparent 20%), radial-gradient(circle, #ffd635 10%, transparent 20%), radial-gradient(circle, #ffd635 10%, transparent 20%), radial-gradient(circle, #ffd635 10%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.komugi100:after {
+  display: none;
+  bottom: -35%;
+  background-image: radial-gradient(circle, #56adff 10%, transparent 20%), radial-gradient(circle, #56adff 10%, transparent 20%), radial-gradient(circle, transparent 5%, #56adff 15%, transparent 20%), radial-gradient(circle, #56adff 10%, transparent 20%), radial-gradient(circle, #79ff4c 10%, transparent 20%), radial-gradient(circle, #79ff4c 10%, transparent 20%), radial-gradient(circle, #79ff4c 10%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.komugi100:active {
+  transform: scale(0.9);
+  color: #ce89ff;
+}
+.komugi100.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.komugi100.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* body {
+  margin: 0;
+} */
+
+/* これが無いとモーダルウィンドウ表示の際に余白が出る */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* モーダル全体(背景＋本体) */
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+}
+
+/* モーダル背景 */
+.modal-bg{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* モーダル本体 */
+.modal-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* overflow: scroll; はみ出た部分はスクロールさせる */
+  height: 90%;/* これが無いと「overflow:scroll」が利かない */
+  width: 30%;/* これが無いと「overflow:scroll」が利かない */
+  background: white;
+  padding: 40px;
+}
+
+/* モーダルウィンドウ表示中に記事本体を固定 */
+body.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+/* ボタンの場所 */
+/* 買う */
+.js-modal-open01 {
+  position: absolute;
+  top: 40px;
+  left: 870px;
+  z-index: 2;
+  width: 100px;
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;
+}
+/* 売る */
+.js-modal-open02 {
+  position: absolute;
+  top: 165px;
+  left: 870px;
+  z-index: 2;
+  width: 100px;
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;
+}
+/* フライパン */
+.js-modal-open03 {
+  position: absolute;
+  top: 240px;
+  left: 295px;
+  z-index: 2;
+  width: 100px;
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;
+}
+
+/* 実績 */
+/* #mission {
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  z-index: 3;
+} */
+/* ゲームクリア */
+.game_clear {
+  position: absolute;
+  top: 0px;
+  margin: 0px 0px 0px 245px;
+  z-index: 10;
+  display: none;
+}
+.clear_ryoukai {
+  position: absolute;
+  top: 390px;
+  left: 510px;
+  z-index: 11;
+  display: none;
+}
