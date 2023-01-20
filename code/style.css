@@ -1,3 +1,7 @@
+/* ダブルタップ禁止 */
+html {
+  touch-action: manipulation;
+}
 /* 文字選択禁止 */
 body{
   user-select:none;
