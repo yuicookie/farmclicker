@@ -16,7 +16,7 @@ body{
 /* ウィンドウ */
 .window {
   position: absolute;
-  margin: 0px 0px 0px 250px;
+  margin: 0px 250px 0px 250px;
   z-index: 102;
 }
 .ryoukai {
@@ -29,7 +29,7 @@ body{
 /* タイトル画像 */
 .title_container {
   position: absolute;
-  margin: 0px 0px 0px 250px;
+  margin: 0px 250px 0px 250px;
   width: 777px;
   height: 549px;
   background-image: url(../img/title.jpg);
@@ -57,13 +57,13 @@ body{
 }
 .help_1 {
   position: absolute;
-  margin: 0px 0px 0px 250px;
+  margin: 0px 250px 0px 250px;
   z-index: 102;
   display: none;
 }
 .help_2 {
   position: absolute;
-  margin: 0px 0px 0px 250px;
+  margin: 0px 250px 0px 250px;
   z-index: 102;
   display: none;
 }
@@ -101,7 +101,7 @@ body{
 .container {
   position: relative;
   /* margin: auto; */
-  margin: 10px 0px 0px 250px;
+  margin: 10px 250px 0px 250px;
   width: 777px;
   height: 549px;
   background-image: url(../img/shibahu.jpg);
@@ -708,7 +708,7 @@ body.fixed {
 .game_clear {
   position: absolute;
   top: 0px;
-  margin: 0px 0px 0px 245px;
+  margin: 0px 250px 0px 245px;
   z-index: 10;
   display: none;
 }
